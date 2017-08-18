@@ -11,7 +11,7 @@ var messageRoutes = require('./routes/messages');
 var userRoutes = require('./routes/user');
 
 var app = express();
-mongoose.connect('Yerod:test_123@ds131878.mlab.com:31878/mean');
+mongoose.connect('yerod:test123test@ds145283.mlab.com:45283/angularapp');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
