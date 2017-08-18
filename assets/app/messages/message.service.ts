@@ -22,7 +22,7 @@ export class MessageService {
             : '';
         //return the observable
         //include the token for auther
-        return this.http.post('https://angular2deploy.herokuapp.com/message' + token, body, {headers: headers}) //set the observable doesn't send the req yet.
+        return this.http.post('https://angular2applic.herokuapp.com/message' + token, body, {headers: headers}) //set the observable doesn't send the req yet.
             .map((response: Response) =>{
                 const result= response.json(); //map --> transform the req data
                 const message= new Message(
@@ -40,7 +40,7 @@ export class MessageService {
     }
 
     getMessages() {
-        return this.http.get('https://angular2deploy.herokuapp.com/message')
+        return this.http.get('https://angular2applic.herokuapp.com/message')
             .map((response: Response) => {
                 const messages = response.json().obj;
                 let transformedMessages: Message[] = [];
@@ -76,7 +76,7 @@ export class MessageService {
             : '';
 
         //return the observable
-        return this.http.patch('https://angular2deploy.herokuapp.com/message/' + message.messageId + token, body, {headers: headers}) //set the observable doesn't send the req yet.
+        return this.http.patch('https://angular2applic.herokuapp.com/message/' + message.messageId + token, body, {headers: headers}) //set the observable doesn't send the req yet.
             .map((response: Response) => response.json()) //map --> transform the req data
             .catch((error: Response) =>{
                 this.errorService.handleError(error.json()); //run own error message
@@ -90,7 +90,7 @@ export class MessageService {
             ? '?token=' + localStorage.getItem('token')
             : '';
         //call the delete route in the back-end
-        return this.http.delete('https://angular2deploy.herokuapp.com/message/' + message.messageId + token) //set the observable doesn't send the req yet.
+        return this.http.delete('https://angular2applic.herokuapp.com/message/' + message.messageId + token) //set the observable doesn't send the req yet.
             .map((response: Response) => response.json()) //map --> transform the req data
             .catch((error: Response) =>{
                 this.errorService.handleError(error.json()); //run own error message

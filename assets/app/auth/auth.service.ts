@@ -20,7 +20,7 @@ export class AuthService{
         //to let the back-end know it's a JSON data
         const headers = new Headers({'Content-Type' : 'application/json'});
         //return an observable
-        return this.http.post('https://angular2deploy.herokuapp.com/user',body, {headers:headers})
+        return this.http.post('https://angular2applic.herokuapp.com/user',body, {headers:headers})
             .map((response:Response) => response.json())
             .catch((error: Response) =>{
                 this.errorService.handleError(error.json()); //run own error message
@@ -34,7 +34,7 @@ export class AuthService{
         //to let the back-end know it's a JSON data
         const headers = new Headers({'Content-Type' : 'application/json'});
         //return an observable
-        return this.http.post('https://angular2deploy.herokuapp.com/user/signin',body, {headers:headers})
+        return this.http.post('https://angular2applic.herokuapp.com/user/signin',body, {headers:headers})
             .map((response:Response) => response.json())
             .catch((error: Response) =>{
                 this.errorService.handleError(error.json()); //run own error message
